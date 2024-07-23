@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 import { Announcement } from '@/components/announcement'
 import { buttonVariants } from '@/components/ui/button'
-import ShinyButton from '@/components/ui/shiny-button'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
 
@@ -31,8 +30,17 @@ export function HeroSection() {
         <Link href="/dashboard" className={cn(buttonVariants())}>
           Get Started
         </Link>
-        <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
-          <ShinyButton text="GitHub" />
+        <Link
+          href={siteConfig.links.github}
+          target="_blank"
+          rel="noreferrer"
+          className={cn(
+            buttonVariants({
+              variant: 'outline'
+            })
+          )}
+        >
+          GitHub
         </Link>
       </div>
     </section>
