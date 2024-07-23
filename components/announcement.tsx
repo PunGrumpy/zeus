@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 
-import AnimatedShinyText from './ui/animated-shiny-text'
+import AnimatedShinyText from '@/components/ui/animated-shiny-text'
 
 export function Announcement() {
   return (

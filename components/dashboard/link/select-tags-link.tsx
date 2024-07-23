@@ -17,7 +17,7 @@ interface SelectTagsLinkProps {
   onDeleteTag: (tag: string) => void
 }
 
-const SelectTagsLink = (props: SelectTagsLinkProps) => {
+export function SelectTagsLink(props: SelectTagsLinkProps) {
   return (
     <div className="space-y-2">
       <p className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
@@ -57,5 +57,3 @@ const SelectTagsLink = (props: SelectTagsLinkProps) => {
     </div>
   )
 }
-
-export default SelectTagsLink

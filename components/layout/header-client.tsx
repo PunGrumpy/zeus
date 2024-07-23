@@ -5,19 +5,18 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Session } from 'next-auth'
 
+import { Icons } from '@/components/icons'
 import { CommandMenu } from '@/components/menu/command-menu'
 import { DropdownMenuClient } from '@/components/menu/dropdown-menu'
 import { MainNav } from '@/components/navigation/main-nav'
 import { MobileNav } from '@/components/navigation/mobile-nav'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { HeaderAnimated } from '@/components/ui/header-animated'
 import { protectedRoutes } from '@/config/route'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
-
-import { Icons } from '../icons'
-import { Badge } from '../ui/badge'
 
 interface HeaderProps {
   session?: Session | null

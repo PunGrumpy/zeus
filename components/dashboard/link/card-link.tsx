@@ -8,6 +8,11 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 
+import { CopyLinkDropdown } from '@/components/dashboard/link/copy-link'
+import { CopyQR } from '@/components/dashboard/link/copy-qr'
+import { DeleteLink } from '@/components/dashboard/link/delete-link'
+import { EditLink } from '@/components/dashboard/link/edit-link'
+import { ShowClicks } from '@/components/dashboard/link/show-clicks-link'
 import {
   Collapsible,
   CollapsibleContent,
@@ -21,12 +26,6 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import { cn, formatDate } from '@/lib/utils'
-
-import { CopyLinkDropdown } from './copy-link'
-import { CopyQR } from './copy-qr'
-import { DeleteLink } from './delete-link'
-import { EditLink } from './edit-link'
-import { ShowClicks } from './show-clicks-link'
 
 interface CardLinkProps {
   linkInfo: Links

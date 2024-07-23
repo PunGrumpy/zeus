@@ -12,15 +12,14 @@ import {
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 
+import { CreateTag } from '@/components/dashboard/tag/create-tag'
+import { DeleteTag } from '@/components/dashboard/tag/delete-tag'
 import { Button } from '@/components/ui/button'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger
 } from '@/components/ui/popover'
-
-import { CreateTag } from './create-tag'
-import { DeleteTag } from './delete-tag'
 
 interface SearchTagProps {
   tags: Tags[]

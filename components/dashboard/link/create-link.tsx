@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import type { z } from 'zod'
 
+import { SelectTagsLink } from '@/components/dashboard/link/select-tags-link'
 import { Icons } from '@/components/icons'
 import { Alert } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
@@ -35,8 +36,6 @@ import { checkIfSlugExist, createLink } from '@/lib/actions/links'
 import { insertTagToLink } from '@/lib/actions/tags'
 import { env } from '@/lib/env.mjs'
 import { CreateLinkSchema } from '@/lib/schema'
-
-import SelectTagsLink from './select-tags-link'
 
 interface CreateLinkProps {
   children: ReactNode
