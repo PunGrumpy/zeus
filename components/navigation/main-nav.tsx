@@ -14,7 +14,7 @@ export function MainNav() {
         className="mr-4 flex items-center space-x-2 transition-opacity hover:opacity-80 lg:mr-6 rtl:space-x-reverse"
       >
         <Icons.logo className="size-5" />
-        <span className="hidden font-bold lg:inline-block">
+        <span className="hidden text-2xl font-bold lg:inline-block">
           {siteConfig.name}
         </span>
         <Badge
