@@ -13,9 +13,14 @@ import { cn } from '@/lib/utils'
 interface LinksLimitProps {
   userLinks: number
   maxLinks: number
+  className?: string
 }
 
-export function LinksLimit({ userLinks, maxLinks }: LinksLimitProps) {
+export function LinksLimit({
+  userLinks,
+  maxLinks,
+  className
+}: LinksLimitProps) {
   const max = userLinks >= maxLinks
   const mid = userLinks >= maxLinks / 2
   return (
@@ -25,7 +30,7 @@ export function LinksLimit({ userLinks, maxLinks }: LinksLimitProps) {
           <div
             className={buttonVariants({
               variant: 'outline',
-              className: 'cursor-default font-mono shadow-none'
+              className: `cursor-default font-mono shadow-none ${className}`
             })}
           >
             <div

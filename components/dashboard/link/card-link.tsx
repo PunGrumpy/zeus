@@ -39,7 +39,7 @@ export function CardLink({ linkInfo, linkTags, tagsInfo }: CardLinkProps) {
   )
 
   return (
-    <div className="flex w-full flex-col rounded-md border p-3 shadow-sm">
+    <div className="flex w-full flex-col rounded-md border p-4 shadow-sm transition-colors duration-75">
       <div className="mb-1 flex w-full items-center justify-between space-x-2">
         <Link
           href={`/${linkInfo.slug}`}
@@ -96,11 +96,14 @@ export function CardLink({ linkInfo, linkTags, tagsInfo }: CardLinkProps) {
           />
         </div>
       </div>
-      <p className="mb-2 truncate font-mono text-sm" title={linkInfo.url}>
+      <p
+        className="mb-2 truncate font-mono text-sm text-muted-foreground"
+        title={linkInfo.url}
+      >
         {linkInfo.url}
       </p>
       <Collapsible>
-        <div className="flex items-center justify-between font-mono text-xs font-medium md:space-x-2">
+        <div className="flex items-center justify-between font-mono text-xs font-medium text-muted-foreground md:space-x-2">
           <div className="flex max-w-[75%] items-center space-x-2">
             {linkTags.length > 0 && (
               <div className="flex cursor-default items-center space-x-1">

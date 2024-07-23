@@ -54,9 +54,9 @@ export function SearchTag(props: SearchTagProps) {
       <PopoverTrigger asChild>
         <Button variant="outline">
           {isOpened ? (
-            <XIcon className="size-4 md:mr-2" />
+            <XIcon className="mr-2 size-4" />
           ) : (
-            <TagsIcon className="size-4 md:mr-2" />
+            <TagsIcon className="mr-2 size-4" />
           )}
           {props.tagName ? (
             <span>
@@ -67,7 +67,10 @@ export function SearchTag(props: SearchTagProps) {
               })}
             </span>
           ) : (
-            <span className="hidden md:block">Select a tag</span>
+            <>
+              <span className="hidden md:block">Select a tag</span>
+              <span className="md:hidden">Tags</span>
+            </>
           )}
         </Button>
       </PopoverTrigger>
