@@ -1,7 +1,5 @@
 import type { ReactNode } from 'react'
 
-import { SubMainNav } from '@/components/navigation/submain-nav'
-
 interface DashboardLayoutProps {
   children: ReactNode
 }
