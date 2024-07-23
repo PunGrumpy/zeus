@@ -37,6 +37,7 @@ import {
 } from '@/components/ui/popover'
 import { Textarea } from '@/components/ui/textarea'
 import { updateLink } from '@/lib/actions/links'
+import { env } from '@/lib/env.mjs'
 import { EditLinkSchema } from '@/lib/schema'
 
 interface EditLinkProps {
@@ -63,9 +64,7 @@ export function EditLink(props: EditLinkProps) {
     }
   })
 
-  // Form Submit method:
   const onSubmit = async (values: z.infer<typeof EditLinkSchema>) => {
-    // Check if slug & url are equals to prevent infinite redirect =>
     if (values.slug === values.url) {
       setLoading(false)
       setError(true)
@@ -77,9 +76,8 @@ export function EditLink(props: EditLinkProps) {
       setLoading(true)
       await updateLink(values)
 
-      // If not any changes in the tags, return:
       toast.success('Link edited successfully.', {
-        description: `Url: https://slug.vercel.app/${values.slug}`,
+        description: `${env.NEXT_PUBLIC_VERCEL_URL}/${values.slug}`,
         duration: 10000,
         closeButton: true
       })

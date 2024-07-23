@@ -19,6 +19,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
+import { env } from '@/lib/env.mjs'
 
 interface CopyQRProps {
   linkInfo: Links
@@ -65,7 +66,7 @@ export function CopyQR({ linkInfo }: CopyQRProps) {
             id="qr-code"
             className="size-32"
             style={{ height: 'auto' }}
-            value={`https://slug.vercel.app/${linkInfo.slug}`}
+            value={`${env.NEXT_PUBLIC_VERCEL_URL}/${linkInfo.slug}`}
             viewBox={`0 0 128 128`}
           />
         </div>
