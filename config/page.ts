@@ -12,7 +12,7 @@ import {
 } from 'lucide-react'
 
 import { Icons } from '@/components/icons'
-import { MainNavItem } from '@/types/nav'
+import { MainNavItem } from '@/types/navigation'
 
 interface PagesConfig {
   general: MainNavItem[]

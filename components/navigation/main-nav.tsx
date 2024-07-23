@@ -1,17 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import * as React from 'react'
 
 import { Icons } from '@/components/icons'
 import { Badge } from '@/components/ui/badge'
 import { siteConfig } from '@/config/site'
-import { cn } from '@/lib/utils'
 
 export function MainNav() {
-  const pathname = usePathname()
-
   return (
     <div className="mr-4 hidden md:flex">
       <Link
@@ -29,28 +24,6 @@ export function MainNav() {
           Beta
         </Badge>
       </Link>
-      <nav className="flex items-center gap-4 text-sm lg:gap-6">
-        <Link
-          href="/dashboard"
-          className={cn(
-            'transition-colors hover:text-foreground/80',
-            pathname === '/dashboard' ? 'text-foreground' : 'text-foreground/60'
-          )}
-        >
-          Dashboard
-        </Link>
-        <Link
-          href="/dashboard/setting"
-          className={cn(
-            'transition-colors hover:text-foreground/80',
-            pathname === '/dashboard/setting'
-              ? 'text-foreground'
-              : 'text-foreground/60'
-          )}
-        >
-          Setting
-        </Link>
-      </nav>
     </div>
   )
 }

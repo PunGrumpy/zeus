@@ -17,7 +17,7 @@ import {
 } from '@/components/ui/command'
 import { pageConfig } from '@/config/page'
 import { cn } from '@/lib/utils'
-import { MainNavItem } from '@/types/nav'
+import { MainNavItem } from '@/types/navigation'
 
 export function CommandMenu({ ...props }: AlertDialogProps) {
   const [open, setOpen] = React.useState(false)
