@@ -14,7 +14,7 @@ interface CopyLinkProps {
 
 export function CopyLinkDropdown(props: CopyLinkProps) {
   const [, copy] = useCopyToClipboard()
-  const url = env.NEXT_PUBLIC_URL
+  const url = env.NEXT_PUBLIC_VERCEL_URL
 
   const handleCopy = (text: string) => () => {
     copy(text)
