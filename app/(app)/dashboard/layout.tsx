@@ -9,7 +9,6 @@ interface DashboardLayoutProps {
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <>
-      <SubMainNav />
       <main className="container my-6 flex max-w-screen-2xl items-center">
         {children}
       </main>
