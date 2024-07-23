@@ -47,7 +47,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
           />
           <CreateLink tags={data.tags}>
             <Button>
-              <PlusIcon className="mr-2 size-4" />
+              <PlusIcon className="size-4 md:mr-2" />
               <span className="hidden md:block">Create Link</span>
             </Button>
           </CreateLink>

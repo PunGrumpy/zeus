@@ -55,9 +55,9 @@ const SearchTag = (props: SearchTagProps) => {
       <PopoverTrigger asChild>
         <Button variant="outline">
           {isOpened ? (
-            <XIcon className="mr-2 size-4" />
+            <XIcon className="size-4 md:mr-2" />
           ) : (
-            <TagsIcon className="mr-2 size-4" />
+            <TagsIcon className="size-4 md:mr-2" />
           )}
           {props.tagName ? (
             <span>

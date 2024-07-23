@@ -127,7 +127,7 @@ export function CardLink({ linkInfo, linkTags, tagsInfo }: CardLinkProps) {
               {linkInfo.description}
             </p>
             <CollapsibleTrigger className="flex items-center transition-colors md:hidden">
-              <ChevronDownIcon className="mr-2 size-4" />
+              <ChevronDownIcon className="size-4 md:mr-2" />
               <span>Info</span>
             </CollapsibleTrigger>
           </div>
