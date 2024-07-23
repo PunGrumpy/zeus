@@ -241,9 +241,9 @@ export function CreateLink(props: CreateLinkProps) {
               </DialogClose>
               <Button type="submit" disabled={loading}>
                 {loading ? (
-                  <Icons.spinner className="size-4 animate-spin" />
+                  <Icons.spinner className="mr-2 size-4 animate-spin" />
                 ) : (
-                  <RocketIcon className="size-4" />
+                  <RocketIcon className="mr-2 size-4" />
                 )}
                 <span>{loading ? 'Creating...' : 'Create'}</span>
               </Button>
