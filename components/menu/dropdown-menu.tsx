@@ -1,8 +1,8 @@
 'use client'
 
 import { ExitIcon } from '@radix-ui/react-icons'
-import { LayoutDashboardIcon } from 'lucide-react'
-import { redirect } from 'next/navigation'
+import { LayoutDashboardIcon, SettingsIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import { Session } from 'next-auth'
 import { signOut } from 'next-auth/react'
 import { toast } from 'sonner'
@@ -23,12 +23,17 @@ interface DropdownMenuClientProps {
 }
 
 export function DropdownMenuClient({ session }: DropdownMenuClientProps) {
+  const router = useRouter()
   const user = session?.user
   const name = user?.name ?? 'Zeus Admin'
   const email = user?.email ?? 'example@zeus.god'
   const image = user?.image ?? 'https://avatar.tobi.sh/zeus'
 
   const avatarFallback = name.charAt(0)
+
+  const handleNavigation = (path: string) => {
+    router.push(path)
+  }
 
   return (
     <DropdownMenu>
@@ -49,14 +54,21 @@ export function DropdownMenuClient({ session }: DropdownMenuClientProps) {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem
-          onClick={() => {
-            redirect('/dashboard')
-          }}
+          onClick={() => handleNavigation('/dashboard')}
           className="cursor-pointer"
         >
           Dashboard
           <DropdownMenuShortcut>
             <LayoutDashboardIcon className="size-4" />
+          </DropdownMenuShortcut>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => handleNavigation('/settings')}
+          className="cursor-pointer"
+        >
+          Settings
+          <DropdownMenuShortcut>
+            <SettingsIcon className="size-4" />
           </DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
