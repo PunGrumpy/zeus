@@ -33,6 +33,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { checkIfSlugExist, createLink } from '@/lib/actions/links'
 import { insertTagToLink } from '@/lib/actions/tags'
+import { env } from '@/lib/env.mjs'
 import { CreateLinkSchema } from '@/lib/schema'
 
 import SelectTagsLink from './select-tags-link'
@@ -112,9 +113,8 @@ export function CreateLink(props: CreateLinkProps) {
       }
 
       toast.success('Link created successfully', {
-        description: `Url: https://slug.vercel.app/${values.slug}`,
-        duration: 10000,
-        closeButton: true
+        description: `${env.NEXT_PUBLIC_VERCEL_URL}/${values.slug}`,
+        duration: 10000
       })
 
       form.reset()
@@ -132,7 +132,7 @@ export function CreateLink(props: CreateLinkProps) {
   const generateConfetti = async () => {
     const jsConfetti = new JSConfetti()
     await jsConfetti.addConfetti({
-      confettiColors: ['#fdd835', '#4caf50', '#2196f3', '#f44336', '#ff9800'],
+      confettiColors: ['#f44336', '#ff9800', '#2196f3', '#4caf50', '#fdd835'],
       confettiRadius: 3,
       confettiNumber: 50
     })
