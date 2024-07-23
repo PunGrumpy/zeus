@@ -11,7 +11,7 @@ interface SearchLinksProps {
   className?: string
 }
 
-const SearchLinks = ({ className }: SearchLinksProps) => {
+export function SearchLinks({ className }: SearchLinksProps) {
   const searchParams = useSearchParams()
   const pathname = usePathname()
   const router = useRouter()
@@ -43,5 +43,3 @@ const SearchLinks = ({ className }: SearchLinksProps) => {
     </div>
   )
 }
-
-export default SearchLinks

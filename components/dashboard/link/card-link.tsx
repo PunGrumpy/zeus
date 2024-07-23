@@ -154,5 +154,3 @@ export function CardLink({ linkInfo, linkTags, tagsInfo }: CardLinkProps) {
     </div>
   )
 }
-
-export default CardLink

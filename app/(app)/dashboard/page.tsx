@@ -1,10 +1,10 @@
 import { PlusIcon } from 'lucide-react'
 
-import CardLink from '@/components/dashboard/link/card-link'
+import { CardLink } from '@/components/dashboard/link/card-link'
 import { CreateLink } from '@/components/dashboard/link/create-link'
-import LinksLimit from '@/components/dashboard/link/links-limit'
-import SearchLinks from '@/components/dashboard/link/search-link'
-import SearchTag from '@/components/dashboard/tag/search-tags'
+import { LinksLimit } from '@/components/dashboard/link/links-limit'
+import { SearchLinks } from '@/components/dashboard/link/search-link'
+import { SearchTag } from '@/components/dashboard/tag/search-tags'
 import { Button } from '@/components/ui/button'
 import { getLinksAndTagsByUser } from '@/lib/query'
 

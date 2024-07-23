@@ -15,7 +15,7 @@ interface LinksLimitProps {
   maxLinks: number
 }
 
-const LinksLimit = ({ userLinks, maxLinks }: LinksLimitProps) => {
+export function LinksLimit({ userLinks, maxLinks }: LinksLimitProps) {
   const max = userLinks >= maxLinks
   const mid = userLinks >= maxLinks / 2
   return (
@@ -61,5 +61,3 @@ const LinksLimit = ({ userLinks, maxLinks }: LinksLimitProps) => {
     </TooltipProvider>
   )
 }
-
-export default LinksLimit

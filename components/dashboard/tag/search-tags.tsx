@@ -27,7 +27,7 @@ interface SearchTagProps {
   tagName?: string
 }
 
-const SearchTag = (props: SearchTagProps) => {
+export function SearchTag(props: SearchTagProps) {
   const [isOpened, setIsOpened] = useState<boolean>(false)
   const searchTagParams = useSearchParams()
   const pathname = usePathname()
@@ -134,5 +134,3 @@ const SearchTag = (props: SearchTagProps) => {
     </Popover>
   )
 }
-
-export default SearchTag
