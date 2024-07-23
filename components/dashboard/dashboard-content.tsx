@@ -4,20 +4,20 @@ import { Links, LinkTags, Tags } from '@prisma/client'
 import { PlusIcon } from 'lucide-react'
 import { useMemo, useState } from 'react'
 
-import { Button } from '../ui/button'
+import { CardLink } from '@/components/dashboard/link/card-link'
+import { CreateLink } from '@/components/dashboard/link/create-link'
+import { LinksLimit } from '@/components/dashboard/link/links-limit'
+import { SearchLinks } from '@/components/dashboard/link/search-link'
+import { ViewLink } from '@/components/dashboard/link/view-link'
+import { SearchTag } from '@/components/dashboard/tag/search-tags'
+import { Button } from '@/components/ui/button'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue
-} from '../ui/select'
-import { CardLink } from './link/card-link'
-import { CreateLink } from './link/create-link'
-import { LinksLimit } from './link/links-limit'
-import { SearchLinks } from './link/search-link'
-import { ViewLink } from './link/view-link'
-import { SearchTag } from './tag/search-tags'
+} from '@/components/ui/select'
 
 interface LinkWithTags extends Links {
   tags: LinkTags[]
