@@ -28,7 +28,7 @@ export function HeaderAnimated(props: HeaderAnimatedProps) {
   }, [])
 
   const headerClasses = cn(
-    'sticky top-0 z-50 w-full border-b transition-all duration-200',
+    'transition-all duration-200',
     isScrolled
       ? 'border-border/40 backdrop-blur'
       : 'border-transparent bg-transparent'
