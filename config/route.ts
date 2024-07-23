@@ -42,7 +42,7 @@ export const authRoutes: ReadonlyArray<string> = [
  */
 export const protectedRoutes: ReadonlyArray<string> = [
   '/dashboard',
-  '/dashboard/settings'
+  '/settings'
 ] as const
 
 /**

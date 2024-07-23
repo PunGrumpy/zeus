@@ -25,7 +25,7 @@ export const updateProfile = async (
     })
 
     revalidatePath('/')
-    revalidatePath('/dashboard/settings')
+    revalidatePath('/settings')
 
     return result
   } catch (error) {
