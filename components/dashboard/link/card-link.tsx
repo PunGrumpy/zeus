@@ -39,7 +39,7 @@ export function CardLink({ linkInfo, linkTags, tagsInfo }: CardLinkProps) {
   )
 
   return (
-    <div className="flex w-full flex-col rounded-md border p-4 shadow-sm transition-colors duration-75">
+    <div className="flex w-full flex-col rounded-md border bg-secondary/20 p-4 shadow-sm transition-colors duration-75 hover:border-primary/20">
       <div className="mb-1 flex w-full items-center justify-between space-x-2">
         <Link
           href={`/${linkInfo.slug}`}
@@ -55,10 +55,6 @@ export function CardLink({ linkInfo, linkTags, tagsInfo }: CardLinkProps) {
             lastDate={linkInfo.lastClicked}
             className="hidden border-r pr-2 md:flex"
           />
-          {/* 
-            Radix Dialog + DropdownMenu bug 🥺
-            https://github.com/radix-ui/primitives/issues/1836
-          */}
           <Dialog>
             <DropdownMenu>
               <DropdownMenuTrigger className="transition-opacity hover:opacity-75">
