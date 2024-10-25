@@ -57,7 +57,7 @@ export default auth(async request => {
       const getDataApi = await urlFromServer(zeusRoute!)
 
       if (getDataApi.redirect404) {
-        console.warn('🚧 Warning - Redirect 404: ', zeusRoute)
+        console.warn('Warning - Redirect 404: ', zeusRoute)
       }
 
       if (getDataApi.error) {
@@ -68,7 +68,7 @@ export default auth(async request => {
         return NextResponse.redirect(new URL(getDataApi.url).toString())
       }
     } catch (error) {
-      console.error('🚨 Error in dynamic route handling:', error)
+      console.error('Error in dynamic route handling:', error)
       return NextResponse.json(
         { error: 'Internal Server Error' },
         { status: 500 }

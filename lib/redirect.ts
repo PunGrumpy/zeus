@@ -27,7 +27,7 @@ export const urlFromServer = async (
     })
 
     if (!link) {
-      console.warn(`🔍 urlFromServer: Zeus "${slug}" not found`)
+      console.warn(`urlFromServer: Zeus "${slug}" not found`)
       return {
         error: false,
         message: 'Zeus not found or invalid.',
@@ -43,7 +43,7 @@ export const urlFromServer = async (
       }
     })
 
-    console.log(`✅ urlFromServer: Successfully processed slug "${slug}"`)
+    console.log(`urlFromServer: Successfully processed slug "${slug}"`)
     return {
       error: false,
       message: 'Success',
