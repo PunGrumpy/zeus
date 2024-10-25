@@ -1,6 +1,7 @@
 'use client'
 
 import { LoaderIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import { type ReactNode, useState } from 'react'
 import { toast } from 'sonner'
 
@@ -26,6 +27,7 @@ interface DeleteAccountProps {
 const DeleteAccount = (props: DeleteAccountProps) => {
   const [confirmEmail, setConfirmEmail] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
+  const router = useRouter()
 
   const handleDeleteAccount = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -39,6 +41,8 @@ const DeleteAccount = (props: DeleteAccountProps) => {
       description: 'Your account is being deleted.',
       success: () => {
         setLoading(false)
+        router.push('/')
+        router.refresh()
         return `Your account has been deleted.`
       },
       error: 'Failed to delete account. Please try again or contact us.'

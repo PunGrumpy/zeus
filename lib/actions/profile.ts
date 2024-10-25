@@ -1,6 +1,7 @@
 'use server'
 
 import { revalidatePath } from 'next/cache'
+import { cookies } from 'next/headers'
 import type { z } from 'zod'
 
 import { auth, signOut } from '@/auth'
@@ -46,7 +47,12 @@ export const deleteProfile = async (): Promise<boolean> => {
       where: { id: currentUser.user.id }
     })
 
-    await signOut()
+    const cookieStore = cookies()
+    cookieStore.getAll().forEach(cookie => {
+      cookieStore.delete(cookie.name)
+    })
+
+    await signOut({ redirect: false })
     return true
   } catch (error) {
     console.error(
