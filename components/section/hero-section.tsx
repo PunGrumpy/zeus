@@ -1,13 +1,15 @@
-'use client'
-
+import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 
+import { auth } from '@/auth'
 import { Announcement } from '@/components/announcement'
 import { buttonVariants } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
 
-export function HeroSection() {
+export async function HeroSection() {
+  const session = await auth()
+
   return (
     <section
       id="hero"
@@ -27,8 +29,16 @@ export function HeroSection() {
         domain—all with the might of Zeus.
       </p>
       <div className="-translate-y-4 animate-fade-in space-x-2 opacity-0 [--animation-delay:600ms]">
-        <Link href="/dashboard" className={cn(buttonVariants())}>
-          Get Started
+        <Link
+          href="/dashboard"
+          className={cn(
+            buttonVariants({
+              variant: 'rainbow'
+            })
+          )}
+        >
+          {session ? 'Dashboard' : 'Get Started'}
+          <ChevronRight className="ml-1 size-4 shrink-0 transition-all duration-300 ease-out group-hover:translate-x-1" />
         </Link>
         <Link
           href={siteConfig.links.github}
