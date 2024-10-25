@@ -7,6 +7,7 @@ import * as React from 'react'
 
 import { Button } from '@/components/ui/button'
 import {
+  Command,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
@@ -119,29 +120,31 @@ export function CommandMenu({ ...props }: AlertDialogProps) {
           <span className="text-xs">{isMac ? '⌘' : 'Ctrl'}</span>K
         </kbd>
       </Button>
-      <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="General">{General}</CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Theme">{Themes}</CommandGroup>
-          {Documentation && (
-            <>
-              <CommandSeparator />
-              <CommandGroup heading="Documentation">
-                {Documentation}
-              </CommandGroup>
-            </>
-          )}
-          {Socials && (
-            <>
-              <CommandSeparator />
-              <CommandGroup heading="Social">{Socials}</CommandGroup>
-            </>
-          )}
-        </CommandList>
-      </CommandDialog>
+      <Command>
+        <CommandDialog open={open} onOpenChange={setOpen}>
+          <CommandInput placeholder="Type a command or search..." />
+          <CommandList>
+            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandGroup heading="General">{General}</CommandGroup>
+            <CommandSeparator />
+            <CommandGroup heading="Theme">{Themes}</CommandGroup>
+            {Documentation && (
+              <>
+                <CommandSeparator />
+                <CommandGroup heading="Documentation">
+                  {Documentation}
+                </CommandGroup>
+              </>
+            )}
+            {Socials && (
+              <>
+                <CommandSeparator />
+                <CommandGroup heading="Social">{Socials}</CommandGroup>
+              </>
+            )}
+          </CommandList>
+        </CommandDialog>
+      </Command>
     </>
   )
 }
