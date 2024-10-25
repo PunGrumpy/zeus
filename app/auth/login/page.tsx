@@ -1,6 +1,7 @@
 import { ChevronLeftIcon } from '@radix-ui/react-icons'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
 import { AuthForm } from '@/components/form/auth-form'
 import { buttonVariants } from '@/components/ui/button'
@@ -34,7 +35,9 @@ export default async function LoginPage() {
             We&apos;re so excited after seeing you again!
           </p>
         </div>
-        <AuthForm />
+        <Suspense>
+          <AuthForm />
+        </Suspense>
       </div>
     </div>
   )
