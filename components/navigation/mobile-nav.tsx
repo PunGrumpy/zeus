@@ -8,7 +8,12 @@ import * as React from 'react'
 import { Icons } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger
+} from '@/components/ui/sheet'
 import { pageConfig } from '@/config/page'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
@@ -28,6 +33,7 @@ export function MobileNav() {
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="pr-0">
+        <SheetTitle className="sr-only">Menu</SheetTitle>
         <MobileLink
           href="/"
           className="flex items-center"
