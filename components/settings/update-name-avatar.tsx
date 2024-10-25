@@ -94,6 +94,7 @@ export function UpdateNameAvatar({ ...props }: UpdateNameAvatarProps) {
             <Button
               type="submit"
               disabled={loading || hookForm.getValues().name === props.name}
+              className="flex items-center space-x-2"
             >
               {loading ? (
                 <LoaderIcon size={16} className="animate-spin" />

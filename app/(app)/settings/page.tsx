@@ -30,7 +30,11 @@ export default async function SettingsPage() {
           <DeleteAccount
             email={session.user.email!}
             trigger={
-              <Button variant="destructive" size="sm">
+              <Button
+                variant="destructive"
+                size="sm"
+                className="flex items-center space-x-2"
+              >
                 <HeartCrackIcon size={14} />
                 <span>Delete Account</span>
               </Button>

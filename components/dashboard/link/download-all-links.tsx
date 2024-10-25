@@ -37,6 +37,7 @@ export function DownloadAllLinks() {
       size="sm"
       onClick={handleDownloadLinks}
       disabled={isLoading}
+      className="flex items-center space-x-2"
     >
       <DownloadIcon className="size-4" />
       <span>Export Links</span>
