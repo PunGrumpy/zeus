@@ -56,7 +56,7 @@ const HeaderGuest = ({ session }: HeaderProps) => {
             <div className="flex items-center space-x-2">
               {!session ? (
                 <>
-                  <Link href="/auth/login" className={cn(buttonVariants())}>
+                  <Link href="/auth" className={cn(buttonVariants())}>
                     Log in
                   </Link>
                 </>
