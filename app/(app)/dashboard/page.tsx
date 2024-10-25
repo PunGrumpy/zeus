@@ -4,10 +4,10 @@ import { DashboardContent } from '@/components/dashboard/dashboard-content'
 import { getLinksAndTagsByUser } from '@/lib/query'
 
 interface DashboardPageProps {
-  params: {
+  params: Promise<{
     search?: string
     tag?: string
-  }
+  }>
 }
 
 interface LinkWithTags extends Links {
@@ -22,7 +22,7 @@ interface DashboardData {
 
 export default async function DashboardPage({ params }: DashboardPageProps) {
   const data = (await getLinksAndTagsByUser()) as DashboardData
-  const { search: searchLink, tag: searchTag } = params
+  const { search: searchLink, tag: searchTag } = await params
 
   if (!data) {
     return <div>No data available</div>
