@@ -14,7 +14,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   basePath: '/api/auth',
   secret: env.AUTH_SECRET,
   pages: {
-    signIn: '/auth/login',
+    signIn: '/auth',
     error: '/auth/error'
   },
   events: {
