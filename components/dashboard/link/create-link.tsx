@@ -188,6 +188,7 @@ export function CreateLink(props: CreateLinkProps) {
                           onClick={handleGenerateRandomSlug}
                           variant="outline"
                           className="absolute right-0 flex items-center space-x-2 rounded-none rounded-r-md"
+                          suppressHydrationWarning
                         >
                           <ShuffleIcon className="size-4" />
                           <span>Randomize</span>
