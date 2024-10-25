@@ -2,11 +2,12 @@ import { ArrowRightIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 
 import AnimatedShinyText from '@/components/ui/animated-shiny-text'
+import { siteConfig } from '@/config/site'
 
 export function Announcement() {
   return (
     <Link
-      href="https://github.com/PunGrumpy/zues/issues"
+      href={siteConfig.links.github}
       className="group rounded-full border border-primary/10 bg-background text-base transition-all ease-in hover:cursor-pointer hover:bg-primary/5"
       target="_blank"
       rel="noreferrer"
