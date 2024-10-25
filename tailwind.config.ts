@@ -75,12 +75,12 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' }
         },
-        shimmer: {
+        shiny: {
           '0%, 90%, 100%': {
-            'background-position': 'calc(-100% - var(--shimmer-width)) 0'
+            'background-position': 'calc(-100% - var(--shiny-width)) 0'
           },
           '30%, 60%': {
-            'background-position': 'calc(100% + var(--shimmer-width)) 0'
+            'background-position': 'calc(100% + var(--shiny-width)) 0'
           }
         },
         'fade-in': {
@@ -103,7 +103,7 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        shimmer: 'shimmer 8s infinite',
+        shiny: 'shiny 8s infinite',
         'fade-in': 'fade-in 1000ms var(--animation-delay, 0ms) ease forwards',
         'fade-up': 'fade-up 1000ms var(--animation-delay, 0ms) ease forwards',
         marquee: 'marquee var(--duration) linear infinite',
