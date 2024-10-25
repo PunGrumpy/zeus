@@ -92,9 +92,7 @@ export function SearchTag(props: SearchTagProps) {
                 aria-label={tag.name}
                 className="flex w-full items-center justify-between rounded-md border px-2 py-1 text-left text-sm transition-colors duration-200 hover:opacity-80"
                 style={{
-                  backgroundColor: tag.color
-                    ? `${tag.color}`
-                    : 'rgba(23, 23, 23, 0.5)' || '#171717',
+                  backgroundColor: tag.color ? `${tag.color}` : '#171717',
                   color: tag.color ? '#fff' : '#171717'
                 }}
               >
