@@ -83,7 +83,7 @@ model User {
   emailVerified         DateTime?
   image                 String?
   password              String?
-  limitLinks            Int                    @default(30)
+  limitLinks            Int                    @default(10)
   isTwoFactorEnabled    Boolean                @default(false)
   twoFactorConfirmation TwoFactorConfirmation?
   role                  String                 @default("USER")
