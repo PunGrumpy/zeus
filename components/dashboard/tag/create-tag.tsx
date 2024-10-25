@@ -123,7 +123,11 @@ export function CreateTag(props: CreateTagProps) {
                   Cancel
                 </Button>
               </DialogClose>
-              <Button type="submit" disabled={loading}>
+              <Button
+                type="submit"
+                disabled={loading}
+                className="flex items-center space-x-2"
+              >
                 {loading ? (
                   <Icons.spinner className="size-4 animate-spin" />
                 ) : (

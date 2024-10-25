@@ -27,6 +27,7 @@ interface SearchTagProps {
   tagName?: string
 }
 
+// NOTE: I'll fix layout issues to make it look better
 export function SearchTag(props: SearchTagProps) {
   const [isOpened, setIsOpened] = useState<boolean>(false)
   const searchTagParams = useSearchParams()
@@ -119,13 +120,17 @@ export function SearchTag(props: SearchTagProps) {
             )
           })}
         </div>
-        <div className="flex items-center space-x-1">
-          <Button variant="outline" onClick={handleDeleteTag}>
+        <div className="flex items-center space-x-2">
+          <Button
+            variant="outline"
+            onClick={handleDeleteTag}
+            className="flex items-center space-x-2"
+          >
             <SearchXIcon className="size-4" />
             <span>Clear search</span>
           </Button>
           <CreateTag tagsCreated={props.tags}>
-            <Button variant="outline" className="w-full">
+            <Button variant="outline" className="flex items-center space-x-2">
               <PlusIcon className="size-4" />
               <span>Create Tag</span>
             </Button>
