@@ -9,7 +9,7 @@ export const getTwoFactorTokenByToken = async (token: string) => {
     })
     return twoFactorToken
   } catch (error) {
-    console.error('🔢❌ Failed to fetch two-factor token by token:', error)
+    console.error('Failed to fetch two-factor token by token:', error)
     return null
   }
 }
@@ -23,7 +23,7 @@ export const getTwoFactorTokenByEmail = async (email: string) => {
     })
     return twoFactorToken
   } catch (error) {
-    console.error('🔢❌ Failed to fetch two-factor token by email:', error)
+    console.error('Failed to fetch two-factor token by email:', error)
     return null
   }
 }

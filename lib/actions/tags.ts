@@ -8,7 +8,7 @@ import { db } from '@/lib/db'
 import type { CreateTagSchema } from '@/lib/schema'
 
 const handleAuthError = () => {
-  console.error('🔐❌ Not authenticated.')
+  console.error('Not authenticated.')
   return null
 }
 
@@ -31,7 +31,7 @@ export const createTag = async (values: z.infer<typeof CreateTagSchema>) => {
     return result
   } catch (error) {
     console.error(
-      '🏷️❌ Error creating tag:',
+      'Error creating tag:',
       error instanceof Error ? error.message : String(error)
     )
     return null
@@ -51,7 +51,7 @@ export const insertTagToLink = async (linkId: string, tagId: string) => {
     return true
   } catch (error) {
     console.error(
-      '🏷️❌ Error inserting tag to link:',
+      'Error inserting tag to link:',
       error instanceof Error ? error.message : String(error)
     )
     return false
@@ -71,7 +71,7 @@ export const removeTag = async (tagId: string) => {
     return true
   } catch (error) {
     console.error(
-      '🏷️❌ Error removing tag:',
+      'Error removing tag:',
       error instanceof Error ? error.message : String(error)
     )
     return false

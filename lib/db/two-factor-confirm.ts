@@ -7,10 +7,7 @@ export const getTwoFactorConfirmationByUserId = async (userId: string) => {
     })
     return twoFactorConfirmation
   } catch (error) {
-    console.error(
-      '🔐❌ Failed to fetch two-factor confirmation by user ID:',
-      error
-    )
+    console.error('Failed to fetch two-factor confirmation by user ID:', error)
     return null
   }
 }

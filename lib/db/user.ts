@@ -5,7 +5,7 @@ export const getUserByEmail = async (email: string) => {
     const user = await db.user.findFirst({ where: { email } })
     return user
   } catch (error) {
-    console.error('👤❌ Failed to fetch user by email:', error)
+    console.error('Failed to fetch user by email:', error)
     return null
   }
 }
@@ -15,7 +15,7 @@ export const getUserById = async (id: string | undefined) => {
     const user = await db.user.findFirst({ where: { id } })
     return user
   } catch (error) {
-    console.error('👤❌ Failed to fetch user by ID:', error)
+    console.error('Failed to fetch user by ID:', error)
     return null
   }
 }

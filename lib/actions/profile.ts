@@ -9,7 +9,7 @@ import { db } from '@/lib/db'
 import type { UpdateProfileSchema } from '@/lib/schema'
 
 const handleAuthError = () => {
-  console.error('🔐❌ Not authenticated.')
+  console.error('Not authenticated.')
   return null
 }
 
@@ -31,7 +31,7 @@ export const updateProfile = async (
     return result
   } catch (error) {
     console.error(
-      '👤❌ Error updating profile:',
+      'Error updating profile:',
       error instanceof Error ? error.message : String(error)
     )
     return null
@@ -47,7 +47,7 @@ export const deleteProfile = async (): Promise<boolean> => {
       where: { id: currentUser.user.id }
     })
 
-    const cookieStore = cookies()
+    const cookieStore = await cookies()
     cookieStore.getAll().forEach(cookie => {
       cookieStore.delete(cookie.name)
     })
@@ -56,7 +56,7 @@ export const deleteProfile = async (): Promise<boolean> => {
     return true
   } catch (error) {
     console.error(
-      '👤❌ Error deleting profile:',
+      'Error deleting profile:',
       error instanceof Error ? error.message : String(error)
     )
     return false

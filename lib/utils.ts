@@ -92,7 +92,7 @@ export const getMetadata = async (url: string) => {
     } as MetadataResponse
   } catch (error) {
     console.error(
-      '🌐❌ Error fetching metadata:',
+      'Error fetching metadata:',
       error instanceof Error ? error.message : String(error)
     )
     return null

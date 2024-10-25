@@ -7,7 +7,7 @@ export const getLinksAndTagsByUser = cache(async () => {
   const currentUser = await auth()
 
   if (!currentUser) {
-    console.error('🔒 Authentication failed: User not logged in.')
+    console.error('Authentication failed: User not logged in.')
     return null
   }
 
@@ -33,7 +33,7 @@ export const getLinksAndTagsByUser = cache(async () => {
       tags: tagsData
     }
   } catch (error) {
-    console.error('💥 Oops! Failed to fetch links and tags:', error)
+    console.error('Oops! Failed to fetch links and tags:', error)
     throw error
   }
 })
@@ -42,7 +42,7 @@ export const getTagsByUser = cache(async () => {
   const currentUser = await auth()
 
   if (!currentUser) {
-    console.error('🔒 Authentication failed: User not logged in.')
+    console.error('Authentication failed: User not logged in.')
     return null
   }
 

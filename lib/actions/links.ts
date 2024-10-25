@@ -8,7 +8,7 @@ import { db } from '@/lib/db'
 import type { CreateLinkSchema, EditLinkSchema } from '@/lib/schema'
 
 const handleAuthError = () => {
-  console.error('🔐❌ Not authenticated.')
+  console.error('Not authenticated.')
   return null
 }
 
@@ -20,7 +20,7 @@ export const getSingleLink = async (id: string) => {
     return await db.links.findUnique({ where: { id } })
   } catch (error) {
     console.error(
-      '🔗❌ Error fetching link:',
+      'Error fetching link:',
       error instanceof Error ? error.message : String(error)
     )
     return null
@@ -33,7 +33,7 @@ export const checkIfSlugExist = async (slug: string): Promise<boolean> => {
     return !!result
   } catch (error) {
     console.error(
-      '🔗❌ Error checking slug:',
+      'Error checking slug:',
       error instanceof Error ? error.message : String(error)
     )
     return false
@@ -50,8 +50,7 @@ export const createLink = async (
   values: z.infer<typeof CreateLinkSchema>
 ): Promise<CreateLinkResult> => {
   const currentUser = await auth()
-  if (!currentUser)
-    return { error: '🔐 Not authenticated. Please login again.' }
+  if (!currentUser) return { error: 'Not authenticated. Please login again.' }
 
   try {
     const count = await db.links.count({
@@ -62,7 +61,7 @@ export const createLink = async (
     if (count >= limit) {
       return {
         limit: true,
-        error: `📊 You have reached the limit of ${limit} links.`
+        error: `You have reached the limit of ${limit} links.`
       }
     }
 
@@ -76,7 +75,7 @@ export const createLink = async (
     return { limit: false, linkId: result.id }
   } catch (error) {
     console.error(
-      '🔗❌ Error creating link:',
+      'Error creating link:',
       error instanceof Error ? error.message : String(error)
     )
     return { error: 'Failed to create link. Please try again.' }
@@ -97,7 +96,7 @@ export const updateLink = async (values: z.infer<typeof EditLinkSchema>) => {
     revalidatePath('/dashboard')
   } catch (error) {
     console.error(
-      '🔗❌ Error updating link:',
+      'Error updating link:',
       error instanceof Error ? error.message : String(error)
     )
     return null
@@ -117,7 +116,7 @@ export const deleteLink = async (id: string) => {
     return result
   } catch (error) {
     console.error(
-      '🔗❌ Error deleting link:',
+      'Error deleting link:',
       error instanceof Error ? error.message : String(error)
     )
     return null
@@ -137,7 +136,7 @@ export const downloadAllLinks = async () => {
     return result
   } catch (error) {
     console.error(
-      '🔗❌ Error downloading links:',
+      'Error downloading links:',
       error instanceof Error ? error.message : String(error)
     )
     return null

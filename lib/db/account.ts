@@ -8,7 +8,7 @@ export const getAccountByUserId = async (userId: string) => {
 
     return account
   } catch (error) {
-    console.error('💳❌ Failed to retrieve account by user ID:', error)
+    console.error('Failed to retrieve account by user ID:', error)
     return null
   }
 }

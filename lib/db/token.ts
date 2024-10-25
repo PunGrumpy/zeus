@@ -7,7 +7,7 @@ export const getVerificationTokenByToken = async (token: string) => {
     })
     return verificationToken
   } catch (error) {
-    console.error('🔑❌ Failed to fetch verification token by token:', error)
+    console.error('Failed to fetch verification token by token:', error)
     return null
   }
 }
@@ -19,7 +19,7 @@ export const getVerificationTokenByEmail = async (email: string) => {
     })
     return verificationToken
   } catch (error) {
-    console.error('🔑❌ Failed to fetch verification token by email:', error)
+    console.error('Failed to fetch verification token by email:', error)
     return null
   }
 }
@@ -31,7 +31,7 @@ export const getPasswordResetTokenByToken = async (token: string) => {
     })
     return passwordResetToken
   } catch (error) {
-    console.error('🔒❌ Failed to fetch password reset token by token:', error)
+    console.error('Failed to fetch password reset token by token:', error)
     return null
   }
 }
@@ -43,7 +43,7 @@ export const getPasswordResetTokenByEmail = async (email: string) => {
     })
     return passwordResetToken
   } catch (error) {
-    console.error('🔒❌ Failed to fetch password reset token by email:', error)
+    console.error('Failed to fetch password reset token by email:', error)
     return null
   }
 }

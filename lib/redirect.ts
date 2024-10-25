@@ -13,7 +13,7 @@ export const urlFromServer = async (
   slug: string
 ): Promise<UrlFromServerResult> => {
   if (!slug) {
-    console.error('🔗❌ urlFromServer: Zeus is empty or undefined')
+    console.error('urlFromServer: Zeus is empty or undefined')
     return {
       error: true,
       message: 'Invalid slug provided.'
