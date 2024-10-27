@@ -60,7 +60,7 @@ export function EditLink(props: EditLinkProps) {
       id: props.link.id,
       url: props.link.url,
       slug: props.link.slug,
-      description: props.link.description ?? ''
+      description: props.link.description || ''
     }
   })
 
@@ -81,7 +81,6 @@ export function EditLink(props: EditLinkProps) {
         duration: 10000,
         closeButton: true
       })
-      form.reset()
       setOpen(false)
     } catch (error) {
       toast.error('An unexpected error has occurred. Please try again later.')
@@ -114,7 +113,7 @@ export function EditLink(props: EditLinkProps) {
                     <FormControl>
                       <Input
                         {...field}
-                        placeholder={props.link.url}
+                        placeholder="Enter destination URL"
                         disabled={loading}
                       />
                     </FormControl>
@@ -132,7 +131,7 @@ export function EditLink(props: EditLinkProps) {
                       <div className="relative flex items-center">
                         <Input
                           {...field}
-                          placeholder={props.link.slug}
+                          placeholder="Enter custom slug"
                           disabled={unlockSlug}
                         />
                         {unlockSlug ? (
@@ -180,7 +179,7 @@ export function EditLink(props: EditLinkProps) {
                     <FormControl>
                       <Textarea
                         {...field}
-                        defaultValue={props.link.description ?? 'Description'}
+                        placeholder="Enter description"
                         disabled={loading}
                       />
                     </FormControl>
