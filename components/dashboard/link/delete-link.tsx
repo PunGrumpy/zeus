@@ -42,7 +42,10 @@ export function DeleteLink({ link, trigger }: DeleteLinkProps) {
   const [loading, setLoading] = useState<boolean>(false)
 
   const form = useForm<z.infer<typeof DeleteLinkSchema>>({
-    resolver: zodResolver(DeleteLinkSchema)
+    resolver: zodResolver(DeleteLinkSchema),
+    defaultValues: {
+      slug: ''
+    }
   })
 
   const handleDelete = async (values: z.infer<typeof DeleteLinkSchema>) => {
@@ -64,6 +67,7 @@ export function DeleteLink({ link, trigger }: DeleteLinkProps) {
       )
     } finally {
       setLoading(false)
+      form.reset()
     }
   }
 
@@ -90,7 +94,12 @@ export function DeleteLink({ link, trigger }: DeleteLinkProps) {
                     confirm:
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} disabled={loading} autoComplete="off" />
+                    <Input
+                      {...field}
+                      disabled={loading}
+                      autoComplete="off"
+                      placeholder={`Type ${link.slug} to confirm`}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
